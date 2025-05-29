@@ -74,8 +74,8 @@ def create_opportunity(account_id, owner_id):
         "Name": f"{fake.company()} - {date.today().strftime('%Y-%m-%d')}",
         "AccountId": account_id,
         "CloseDate": fake.date_between(start_date='today', end_date='+30d').strftime('%Y-%m-%d'),
-        "StageName": random.choice(["Prospecting", "Qualification", "Needs Analysis", "Value Proposition", "Negotiation/Review"]),
-        "Amount": random.randint(1000, 100000),
+        "StageName": random.choice(["Qualifying", "Active", "Proposal/Price Quote", "Ready to Close", "Closed Won", "Closed Lost"]),
+        "Amount": random.randint(1000, 200000),
         "OwnerId": owner_id,  # Use the passed owner_id
     }
     return sf.Opportunity.create(opportunity)
