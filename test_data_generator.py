@@ -137,7 +137,7 @@ def create_task(contact_id, task_type, owner_id):
         }
     return sf.Task.create(task)
 
-def generate_test_data(num_accounts=10, contacts_per_account=2, opps_per_account=1, num_leads=10, num_tasks=10):
+def generate_test_data(num_accounts=0, contacts_per_account=0, opps_per_account=0, num_leads=0, num_tasks=0):
     print("Generating test data...")
     owner_index = 0  # Initialize owner index
 
@@ -182,11 +182,11 @@ def generate_test_data(num_accounts=10, contacts_per_account=2, opps_per_account
 if __name__ == "__main__":
     try:
         generate_test_data(
-            num_accounts=10,
+            num_accounts=5,
             contacts_per_account=2,
             opps_per_account=1,
-            num_leads=10,
-            num_tasks=10
+            num_leads=2,
+            num_tasks=3
         )
         print("Test data generation completed successfully.")
     except Exception as e:
